@@ -10,8 +10,8 @@
 	<div class="flex items-center justify-between space-y-2">
 		<h2 class="text-3xl font-bold tracking-tight capitalize">Products</h2>
 		<div class="flex items-center space-x-2">
-			<Input class="w-[150px] lg:w-[250px]" />
-			<Button placeholder="Search products...">Search</Button>
+			<Input class="w-[150px] lg:w-[250px]" placeholder="Search products..." />
+			<Button href="products/add">Add Product</Button>
 		</div>
 	</div>
 	{#if showProducts}
