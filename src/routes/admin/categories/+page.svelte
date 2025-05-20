@@ -9,7 +9,7 @@
 		<h2 class="text-3xl font-bold tracking-tight capitalize">Categories</h2>
 		<div class="flex items-center space-x-2">
 			<Input class="w-[150px] lg:w-[250px]" placeholder="Search categories" />
-			<Button type="submit">Add new category</Button>
+			<Button href="categories/add">Add new category</Button>
 		</div>
 	</div>
 
