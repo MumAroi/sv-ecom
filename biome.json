@@ -1,0 +1,59 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "warn"
+      },
+      "style": {
+        "useConst": "error",
+        "noNegationElse": "error",
+        "useShorthandArrayType": "error"
+      },
+      "correctness": {
+        "noUnusedVariables": "off",
+        "noUnusedImports": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "always"
+    }
+  },
+  "files": {
+    "ignore": [
+      "**/node_modules",
+      "**/.svelte-kit",
+      "**/build",
+      "**/.vercel",
+      "**/.output",
+      "**/dist",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "**/yarn.lock"
+    ]
+  },
+  "overrides": [
+    {
+      "include": ["*.svelte"],
+      "formatter": {
+        "lineWidth": 100
+      }
+    }
+  ]
+}

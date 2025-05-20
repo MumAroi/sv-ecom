@@ -21,7 +21,7 @@
 		},
 		{
 			title: 'Orders',
-			url: 'order',
+			url: 'orders',
 			icon: Truck
 		},
 		{
