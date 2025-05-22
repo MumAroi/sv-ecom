@@ -3,8 +3,17 @@
 	import * as Avatar from '$lib/components/ui/avatar';
 	import Button from './ui/button/button.svelte';
 	import { Menu, ShoppingCart } from '@lucide/svelte';
+	import SignInModal from './modals/SignInModal.svelte';
+	import SignUpModal from './modals/SignUpModal.svelte';
+	import MobileAuthModal from './modals/MobileAuth.svelte';
+	import ResetPasswordModal from './modals/ResetPassword.svelte';
+	import {
+		mobileAuthModalState,
+		signInModalState,
+		signUpModalState
+	} from '@/states/modalState.svelte';
 
-	const user = true;
+	const user = false;
 	const isAdmin = false;
 	const accountPages = [
 		{
@@ -79,11 +88,12 @@
 			</DropdownMenu.Root>
 		{:else}
 			<div class="hidden items-center gap-2 md:flex">
-				<Button variant="ghost">Sign In</Button>
-				<Button>Sign Up</Button>
+				<Button variant="ghost" onclick={() => signInModalState.setTrue()}>Sign In</Button>
+				<Button onclick={() => signUpModalState.setTrue()}>Sign Up</Button>
 			</div>
 			<button
 				class="hover:bg-secondary flex size-10 items-center justify-center rounded-full md:hidden"
+				onclick={() => mobileAuthModalState.setTrue()}
 			>
 				<Menu class="size-6" />
 			</button>
@@ -100,3 +110,8 @@
 		{/if}
 	</div>
 </header>
+
+<SignInModal />
+<SignUpModal />
+<MobileAuthModal />
+<ResetPasswordModal />

@@ -18,3 +18,34 @@ export const categorySchema = z.object({
     description: z.string(),
     subcategories: z.string().array().min(1),
 });
+
+export const signInSchema = z.object({
+    email: z.string().email(),
+    password: z.string().min(8).max(64),
+});
+
+export const signUpSchema = z
+    .object({
+        name: z.string().min(3).max(20),
+        email: z.string().email(),
+        password: z.string().min(8).max(64),
+        confirmPassword: z.string().min(8).max(64),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        message: 'Passwords do not match',
+        path: ['confirmPassword'],
+    });
+
+export const resetPasswordSchema = z.object({
+    email: z.string().email(),
+});
+
+export const resetPasswordFormSchema = z
+    .object({
+        password: z.string().min(8).max(64),
+        confirmPassword: z.string().min(8).max(64),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        message: 'Passwords do not match',
+        path: ['confirmPassword'],
+    });
