@@ -19,3 +19,4 @@ export const signInModalState = new ModalState(false);
 export const signUpModalState = new ModalState(false);
 export const mobileAuthModalState = new ModalState(false);
 export const resetPasswordModalState = new ModalState(false);
+export const cartSheetState = new ModalState(false);

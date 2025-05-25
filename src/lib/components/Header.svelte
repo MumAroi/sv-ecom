@@ -8,12 +8,14 @@
 	import MobileAuthModal from './modals/MobileAuth.svelte';
 	import ResetPasswordModal from './modals/ResetPassword.svelte';
 	import {
+		cartSheetState,
 		mobileAuthModalState,
 		signInModalState,
 		signUpModalState
 	} from '@/states/modalState.svelte';
+	import CartSheet from './modals/CartSheet.svelte';
 
-	const user = false;
+	const user = true;
 	const isAdmin = false;
 	const accountPages = [
 		{
@@ -99,7 +101,7 @@
 			</button>
 		{/if}
 		{#if user}
-			<button class="inline-blox relative h-fit w-fit">
+			<button class="inline-blox relative h-fit w-fit" onclick={() => cartSheetState.setTrue()}>
 				<div
 					class="bg-primary absolute -top-2 -right-2 flex size-5 items-center justify-center rounded-full text-xs text-white"
 				>
@@ -115,3 +117,4 @@
 <SignUpModal />
 <MobileAuthModal />
 <ResetPasswordModal />
+<CartSheet />
