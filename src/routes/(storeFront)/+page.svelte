@@ -1,8 +1,9 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
 	import * as Carousel from '$lib/components/ui/carousel';
 	import Fade from 'embla-carousel-fade';
 	import Autoplay from 'embla-carousel-autoplay';
+	import SearchBar from '@/components/SearchBar.svelte';
+	import Button from '@/components/ui/button/button.svelte';
 
 	const carouselPics = ['/hero/hero-1.jpg', '/hero/hero-2.jpg', '/hero/hero-3.jpg'];
 </script>
@@ -35,6 +36,13 @@
 				</Carousel.Item>
 			{/each}
 		</Carousel.Content>
+		<SearchBar />
 	</Carousel.Root>
+	<section class="mt-20">
+		<h2 class="text-2xl font-bold md:text-4xl">what we offer</h2>
+		<p class="text-muted-foreground mt-2 text-sm md:mt-3 md:text-base">
+			Explore our wide range of products at competitive prices, delivered right to your doorstep.
+		</p>
+		<Button href="/search" class="my-4 md:my-6">Explore Products Now</Button>
+	</section>
 </div>
-c
