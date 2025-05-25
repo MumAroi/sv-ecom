@@ -14,6 +14,7 @@
 		signUpModalState
 	} from '@/states/modalState.svelte';
 	import CartSheet from './modals/CartSheet.svelte';
+	import { getUserInitial } from '@/utils';
 
 	const user = true;
 	const isAdmin = false;
@@ -36,13 +37,6 @@
 			href: '/me/settings'
 		}
 	];
-
-	function getUserInitials(name: string) {
-		return name
-			.split(' ')
-			.map((n) => n[0])
-			.join('');
-	}
 </script>
 
 <header
@@ -58,7 +52,7 @@
 				<DropdownMenu.Trigger>
 					<Avatar.Root>
 						<Avatar.Image src="https://github.com/shadcn.png" alt="User" />
-						<Avatar.Fallback>{getUserInitials('John Doe')}</Avatar.Fallback>
+						<Avatar.Fallback>{getUserInitial('John Doe')}</Avatar.Fallback>
 					</Avatar.Root>
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
