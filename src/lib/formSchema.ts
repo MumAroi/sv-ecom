@@ -49,3 +49,12 @@ export const resetPasswordFormSchema = z
         message: 'Passwords do not match',
         path: ['confirmPassword'],
     });
+
+export const addressSchema = z.object({
+    name: z.string().min(3).max(100),
+    address: z.string().min(1).max(200),
+    state: z.string().max(100),
+    country: z.string().min(1),
+    isDefaultShipping: z.boolean().default(false),
+    isDefaultBilling: z.boolean().default(false),
+});
