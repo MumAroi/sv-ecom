@@ -22,7 +22,7 @@
 				<Card.Header>
 					<Card.Title>Home address</Card.Title>
 				</Card.Header>
-				<Card.Content>
+				<Card.Content class="flex justify-between text-sm capitalize text-muted-foreground ">
 					<div>
 						<p>21 Street, New York, USA</p>
 						<p>21 Street, New York, USA</p>
