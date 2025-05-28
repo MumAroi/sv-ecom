@@ -51,20 +51,20 @@
 {/if}
 
 <AlertDialog.Root bind:open={deleteModalState}>
-	<AlertDialog.Content class="w-full  p-5">
+	<AlertDialog.Content class="w-full p-5">
 		<form action="">
-			<AlertDialog.Header class="mt-10">
-				<AlertDialog.Title class="font-display text-lg sm:text-xl md:text-3xl  "
-					>Are you absolutely sure?</AlertDialog.Title
-				>
+			<AlertDialog.Header>
+				<AlertDialog.Title class="font-display text-lg sm:text-xl md:text-3xl">
+					Are you absolutely sure?
+				</AlertDialog.Title>
 				<AlertDialog.Description>
 					This action cannot be undone. This will permanently delete this address and remove it data
 					from our servers.
 				</AlertDialog.Description>
 			</AlertDialog.Header>
-			<AlertDialog.Footer class="mt-5 flex flex-col gap-2">
-				<AlertDialog.Cancel type="button" class="w-full">Cancel</AlertDialog.Cancel>
-				<AlertDialog.Action type="submit" class="w-full bg-destructive hover:bg-destructive/90">
+			<AlertDialog.Footer class="mt-5 flex w-full items-center justify-between">
+				<AlertDialog.Cancel type="button" class="w-1/2">Cancel</AlertDialog.Cancel>
+				<AlertDialog.Action type="submit" class="bg-destructive hover:bg-destructive/90 w-1/2">
 					Delete addresses
 				</AlertDialog.Action>
 			</AlertDialog.Footer>

@@ -58,3 +58,22 @@ export const addressSchema = z.object({
     isDefaultShipping: z.boolean().default(false),
     isDefaultBilling: z.boolean().default(false),
 });
+
+export const updateEmailSchema = z.object({
+    email: z.string().email(),
+});
+
+export const updateNameSchema = z.object({
+    name: z.string().min(3).max(20),
+});
+
+export const updatePasswordSchema = z
+    .object({
+        currentPassword: z.string().min(8).max(64),
+        newPassword: z.string().min(8).max(64),
+        confirmPassword: z.string().min(8).max(64),
+    })
+    .refine((data) => data.newPassword === data.confirmPassword, {
+        message: 'Passwords do not match',
+        path: ['confirmPassword'],
+    });
